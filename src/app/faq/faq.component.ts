@@ -11,7 +11,7 @@ export class FaqComponent implements OnInit {
   menuItems: any = [
     {
       label: "When will my interest rate change?",
-       icon: 'The Interest Rate reset under EBLR may be done by the Bank from time to time as per Banks extant guidelines in force '
+       icon: 'The Interest Rate reset under EBLR may be done by the Bank from time to time as per Banks extant guidelines'
     },
     {
       label: "AbouIs EBLR a home loan new product?",
