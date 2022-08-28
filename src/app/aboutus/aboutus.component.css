@@ -1,0 +1,61 @@
+  .card {
+    box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.2);
+    margin: 15px;
+    border-radius: 20px;
+    padding: 20px 5px;
+    font-style: normal;
+    backface-visibility: visible;
+    background-color: whitesmoke;
+    border: 0px;
+  }
+  .title {
+    color: grey;
+  }
+  @media screen and (max-width: 650px) {
+    .column {
+      width: 100%;
+      display: block;
+    }
+  }
+  .intro-text {
+   
+    padding-bottom: 27px;
+    padding-left: 14px;
+    padding-top: 20px;
+    border-left: 2px solid white;
+    font-size: 42px;
+    font-family: Roboto-Light;
+    letter-spacing: -2px;
+    color: #fff;
+    
+}
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+
+}
+.head{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-image: url(src/image/about.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: max-content;
+}
+.listing {
+  padding: 0;
+  margin: 15px 0 0 20px;
+}
+.lti{
+  font-style: italic;
+  font-family:Georgia, 'Times New Roman', Times, serif ;
+}
+img {
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  align-self: center;
+} 

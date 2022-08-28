@@ -1,0 +1,19 @@
+.head{
+    font-size: x-large;
+    font-weight: bolder;
+  font-style: italic;
+}
+.form-control{
+    width: 100%;
+}
+.grp{
+    background-color: aqua;
+}
+body{
+    background-image: url(src/image/faq.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: auto;
+    padding-bottom: 200px;
+  }

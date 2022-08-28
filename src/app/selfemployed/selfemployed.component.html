@@ -1,0 +1,33 @@
+<html>
+  <body background="https://img.freepik.com/free-vector/white-gray-geometric-pattern-background-vector_53876-136510.jpg?w=1060&t=st=1659450154~exp=1659450
+  754~hmac=47b408731fc4c21fcc829d18bdf69520c1ffc6838f98333ca99a1224ca60d899" >
+      <div class="container addform">
+      <h2 class="heading">Income Self Employed form</h2>
+      <br>
+      <div class="row">
+      <div class="col-lg-12">
+      <form [formGroup]="selfEmployedForm" (ngSubmit)="onSubmit()">
+      <br>
+      <div class="form-group row">
+      <label for="turnover" class="col-sm-2 col-form-label" [ngClass]="{'has-error':selfEmployedForm.get('turnover')?.errors && (selfEmployedForm.get('turnover')?.touched || selfEmployedForm.get('turnover')?.dirty)}"><b>Turnover: </b></label><br>
+      <div class="col-sm-5"> 
+      <input type="number" class="form-control" id="turnover" formControlName="turnover" placeholder="Enter Turnover">
+      <span class="help-block " *ngIf="selfEmployedForm.get('turnover')?.errors && (selfEmployedForm.get('turnover')?.touched || selfEmployedForm.get('turnover')?.dirty)">
+      <span class="text-danger" *ngIf="selfEmployedForm.get('turnover')?.errors?.['required']">Turnover is required</span>
+      </span></div></div><br>
+       <div class="form-group row">
+           <label for="natureOfbusiness" class="col-sm-2 col-form-label" [ngClass]="{'has-error':selfEmployedForm.get('natureOfBusiness')?.errors && (selfEmployedForm.get('natureOfBusiness')?.touched || selfEmployedForm.get('natureOfBusiness')?.dirty)}"><b>Nature Of Business:</b></label><br>
+            <div class="col-sm-5">
+          <input type="text" class="form-control" id="natureOfBusiness" formControlName="natureOfBusiness" placeholder="Enter Nature Of Business">
+          <span class="help-block " *ngIf="selfEmployedForm.get('natureOfBusiness')?.errors && (selfEmployedForm.get('natureOfBusiness')?.touched || selfEmployedForm.get('natureOfBusiness')?.dirty)">
+            <span class="text-danger" *ngIf="selfEmployedForm.get('natureOfBusiness')?.errors?.['required']">
+            Turnover is required
+            </span>
+          </span>
+           </div>
+        </div>
+            <br>
+            <button type="submit" class="btn btn-info">NEXT</button> 
+      </form></div></div>
+
+

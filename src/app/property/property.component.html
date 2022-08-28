@@ -1,0 +1,52 @@
+<body background="https://images.freeimages.com/images/large-previews/a3b/website-rays-background-pattern-1637863.png">
+ <div class="container addform">
+ <h2 class="heading">Property Form</h2>
+ <br>
+ <div class="row">
+ <div class="col-lg-12">
+ <form [formGroup]="propertyForm" (ngSubmit)="onSubmit()">
+      <br>
+      
+  <div class="form-group row">
+      <label for="propertyName" class="col-sm-2 col-form-label" [ngClass]="{'has-error':propertyForm.get('propertyName')?.errors && (propertyForm.get('propertyName')?.touched || propertyForm.get('propertyName')?.dirty)}"><b>Property Name</b>: </label><br>
+     <div class="col-sm-5"> 
+    <input type="text" class="form-control" id="propertyName" formControlName="propertyName" placeholder="Enter Property Name">
+    <span class="help-block " *ngIf="propertyForm.get('propertyName')?.errors && (propertyForm.get('propertyName')?.touched || propertyForm.get('propertyName')?.dirty)">
+    <span class="text-danger" *ngIf="propertyForm.get('propertyForm')?.errors?.['required']">
+      Property Name is required
+      </span>
+      </span>
+      </div>
+  </div><br>
+      
+ <div class="form-group row">
+     <label for="propertyLocation" class="col-sm-2 col-form-label" [ngClass]="{'has-error':propertyForm.get('propertyLocation')?.errors && (propertyForm.get('propertyLocation')?.touched || propertyForm.get('propertyLocation')?.dirty)}" ><b>Property Location:</b></label><br>
+      <div class="col-sm-5">
+    <input type="text" class="form-control" id="propertyLocation" formControlName="propertyLocation" placeholder="Enter Property Location">
+    <span class="help-block " *ngIf="propertyForm.get('propertyLocation')?.errors && (propertyForm.get('propertyLocation')?.touched || propertyForm.get('propertyLocation')?.dirty)">
+      <span class="text-danger" *ngIf="propertyForm.get('propertyLocation')?.errors?.['required']">
+        Property Location is required
+        </span>
+        </span>
+     </div>
+  </div>
+      <br>
+
+      <div class="form-group row">
+      <label for="amount" class="col-sm-2 col-form-label" [ngClass]="{'has-error':propertyForm.get('amount')?.errors && (propertyForm.get('amount')?.touched || propertyForm.get('amount')?.dirty)}"><b>Amount</b></label><br>
+       <div class="col-sm-5">
+     <input type="number" class="form-control" id="amount" formControlName="amount" placeholder="Enter Amount">
+     <span class="help-block " *ngIf="propertyForm.get('amount')?.errors && (propertyForm.get('amount')?.touched || propertyForm.get('amount')?.dirty)">
+      <span class="text-danger" *ngIf="propertyForm.get('amount')?.errors?.['required']">
+        Amount is required
+        </span>
+        </span>
+      </div>
+   </div>
+
+  
+
+
+<br>
+      <button type="submit" class="btn btn-info">NEXT</button> 
+</form></div></div>

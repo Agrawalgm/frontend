@@ -1,0 +1,57 @@
+<body>
+<div class="row">
+    <div class="from-group col-sm-6">
+        <div class="row">
+      <div class="col-sm-4" ></div>
+      <div class="col-sm-8"><table style="margin-top: 30%;">
+                <tr class="head">Enter Question</tr><br>
+             <tr id="tab"><input type="text" class="form-control" name="name" placeholder="Enter your name" ngModel/></tr><br>
+             <tr id="tab"><input type="email" class="form-control" name="email" placeholder="Enter a valid Email Adress" ngModel/></tr><br>
+             <tr><textarea name="Comments" id="Comments" rows="4" cols="40" class="form-control" placeholder="Enter a Question with description"></textarea></tr>
+             <br> <button type="reset" class="btn btn-primary">Submit</button>
+        
+          </table></div></div>
+    </div>
+
+    <div class="col-sm-6">
+    <h2 class="head" style="text-align: center;margin-top: 10%;padding-bottom: 50px;">Questions And Answers</h2>
+     <div class="row">
+        <div class="col-sm-10">
+        <table *ngFor="let item of menuItems">
+        <h5> {{item.label}}</h5>
+        <p>{{item.icon}}</p>
+
+        </table>
+        </div>
+        <div class="col-sm-2"></div>
+     </div>
+
+
+
+
+
+<!-- 
+        <mat-toolbar fxLayout="" class="col" color="">
+            <button mat-button *ngFor="let item of menuItems" fxHide.xs>
+                {{item.label}}
+            </button>
+            <button mat-icon-button [matMenuTriggerFor]="dropMenu" fxHide fxShow.xs>
+                <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #dropMenu="matMenu">
+                <ng-container *ngFor="let item of menuItems">
+                    <button mat-menu-item>
+                        {{item.label}}
+                    </button>
+                    <mat-divider></mat-divider>
+                </ng-container>
+            </mat-menu>
+          </mat-toolbar> -->
+    </div>
+
+</div>
+
+</body>
+
+
+ 

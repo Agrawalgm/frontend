@@ -1,0 +1,37 @@
+<body> 
+  <div class="row">
+    <div class="col-sm-2">
+      <button mat-icon-button [matMenuTriggerFor]="menu" class="btn"><mat-icon>toc</mat-icon></button>
+      <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="">My Profile</button>
+      <button mat-menu-item routerLink="">Property Details</button>
+      <button mat-menu-item routerLink="">Employment Details</button>
+      <button mat-menu-item routerLink="">Setting</button>
+     </mat-menu> 
+    </div>
+    <div class="col-sm-8">
+    <div id="user-dash" [align]="'center'"> 
+      <h1 style="margin-top:40px ;font-style: italic;font-weight: 700px;">Loan Application Status</h1> </div>
+      <div class="table" style="background-color:transparent;font-style: italic;">
+      <table class="table table-striped">
+         <thead>
+          <tr>
+              <th>Application Id</th>
+              <th>User Id</th>
+              <th>Application Status</th>     
+          </tr>
+          </thead>
+          <tbody>
+            <tr  *ngFor = "let a of applicationList"> 
+              <td> {{this.applicationList.applicationId}}</td>
+              <td>{{this.applicationList.user.userId}}</td>
+              <td>{{this.applicationList.status}}</td>  
+           </tr> 
+         </tbody>
+       </table>
+     </div>
+  </div> 
+  <div class="col-sm-2">
+  </div>
+</div>
+</body>

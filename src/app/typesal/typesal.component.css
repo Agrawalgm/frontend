@@ -1,0 +1,25 @@
+
+  body{
+    background-image: url(src/image/typesal.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; 
+    height: 100%;
+  }
+  .card {
+    box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.2);
+    margin: 15px;
+    border-radius: 20px;
+    padding: 20px 5px;
+    font-style: normal;
+    backface-visibility: visible;
+    background-color: transparent;
+    border: 0px;
+    margin-top: 100px;
+  }
+  .btn{
+    margin-top: 20px;
+    font-weight:bold ;
+    background-color: antiquewhite;
+    border: 2px solid;
+  }

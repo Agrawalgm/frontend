@@ -1,0 +1,79 @@
+<body background="https://img.freepik.com/premium-vector/white-abstract-background-3d-paper-style_23-2148403778.jpg?w=996">
+  <h3 style="text-align:center;">User Registration</h3>
+  <div class="col-md-6 offset-3 ">
+    <div class="container">
+    <div class="row d-flex justify-content-center align-items-center h-100"> 
+       
+         <div class="col-lg-8 col-xl-8">  
+          <div class="card text-dark bg-white mb-3" style="max-width: 50rem;">
+          <form [formGroup] = "regform" (ngSubmit)="onSubmit()" class="px-md-2"> 
+            <div class="form-outline mb-3">
+           
+                <label for="firstName" style="text-align: center;">First Name</label>
+                <input type="text" style="max-width: 30rem; " formControlName="firstName" class="form-control" placeholder="Enter User FirstName">
+                <span class="help-block " *ngIf="regform.get('firstName')?.errors && (regform.get('firstName')?.touched || regform.get('firstName')?.dirty)">
+                    <span class="text-danger" *ngIf="regform.get('regform')?.errors?.['required']">
+                      First Name is required
+                      </span>
+                      </span>
+                
+            </div>
+            <div class="form-outline mb-3">
+              
+                <label for="middleName">Middle Name</label>
+                <input type="text" style="max-width: 30rem;" formControlName="middleName" class="form-control"placeholder="Enter User MiddleName">
+            </div>
+            <div class="form-outline mb-3">
+               
+                <label for="lastName">Last Name</label>
+                <input type="text" style="max-width: 30rem; " formControlName="lastName" class="form-control" placeholder="Enter User LastName">
+            </div>
+            <div class="form-outline mb-3">
+               
+                <label for="email">Email</label>
+                <input type="email" style="max-width: 30rem; " formControlName="email" class="form-control" placeholder="Enter User Email">
+            
+            </div>
+            <div class="form-outline mb-3">
+             <label for="password">Password</label>
+            <input type="password" style="max-width: 30rem;" formControlName="password" class="form-control" placeholder="Set Password">
+            </div>
+
+            <div class="form-outline mb-3">
+                <label for="number">Phone Number</label>
+               <input type="number" style="max-width: 30rem;" formControlName="phone" class="form-control" placeholder="Enter Phone Number">
+            </div>
+
+            <div class="form-outline mb-3">
+                <label for="dob">Date Of Birth</label>
+               <input type="date" style="max-width: 30rem;" formControlName="dob" class="form-control" placeholder="Enter DOB">
+            </div>
+
+            <div class="form-outline mb-3">
+                <label for="gender">Gender</label>
+               <input type="text" style="max-width: 30rem;" formControlName="gender" class="form-control" placeholder="Enter Gender">
+            </div>
+
+            <div class="form-outline mb-3">
+                <label for="nationality">Nationality</label>
+               <input type="text" style="max-width: 30rem;" formControlName="nationality" class="form-control" placeholder="Enter Nationality">
+            </div>
+
+            <div class="form-outline mb-3">
+                <label for="aadharnumber">AAdhar Number</label>
+               <input type="number" style="max-width: 30rem;" formControlName="aadharNo" class="form-control" placeholder="Enter Aadhar Number">
+            </div>
+
+            <div class="form-outline mb-3">
+                <label for="pannumber">Pan Number</label>
+               <input type="text" style="max-width: 30rem;" formControlName="panNo" class="form-control" placeholder="Enter Pan Number">
+            </div>
+
+           <button type="submit" class="btn btn-success btn-m mb-1">NEXT</button>       
+        </form> 
+        </div>
+    </div>
+ </div>
+ </div>
+
+

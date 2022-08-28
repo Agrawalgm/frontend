@@ -1,0 +1,27 @@
+
+  
+  .card{
+    background-color: transparent;
+     border-width: 0ch;
+  }
+  .btn{
+    font-weight:bold ;
+    background-color: antiquewhite;
+    margin-top: 0px;
+  }
+  body{
+    background-image: url(src/image/emicalc.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .form-group
+{
+ padding-bottom: 28px;
+ font-size: large;
+}
+#st5
+{
+  font-weight: 500;
+  font-style: italic;
+}

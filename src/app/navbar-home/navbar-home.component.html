@@ -1,0 +1,82 @@
+
+<!-- <div class="top">
+    <div class="topnav">
+      <div class="a5">
+        <a routerLink="frontpage">Home</a>
+        <a routerLink="userreg">SignUp</a>
+        <a routerLink="userlogin">Login</a>
+        <a routerLink="adminlogin">Admin Login</a>
+        <a routerLink="elicalc">Eligibility Calculator</a>
+        <a routerLink="emicalc">EMI Calculator</a>
+        <a routerLink="aboutus">About Us</a>
+        <a routerLink="">FAQ</a>
+        
+
+      </div>
+  
+    </div>
+    
+  </div> -->
+
+  <!-- <mat-toolbar color=primary class="mat-evevation-z6">
+    <span> <mat-icon> home </mat-icon> HOME LOAN</span>
+    <div class="spacer" ></div>
+    <a mat-button routerLink="dashboard">Home</a>
+    <a mat-button routerLink="elicalc">Eligiblity Calculator</a>
+    <a mat-button routerLink="emicalc">Emi Calculator</a>
+    <a mat-button routerLink="adminlogin">Admin Login</a>
+    <a mat-button routerLink="userreg">Application Form</a>
+    <a mat-button routerLink="userlogin">User LogIn</a>
+    <a mat-button routerLink="aboutus">About Us</a>
+   
+    
+</mat-toolbar> -->
+<!-- <mat-toolbar fxLayout="row" color="primary">
+  <span fxFlex>Responsive Toolbar Demo</span>
+  <button mat-button *ngFor="let item of menuItems" fxHide.xs>
+      {{item.label}}
+  </button>
+  <button mat-icon-button [matMenuTriggerFor]="dropMenu" fxHide fxShow.xs>
+      <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #dropMenu="matMenu">
+      <ng-container *ngFor="let item of menuItems">
+          <button mat-menu-item>
+              {{item.label}}
+          </button>
+          <mat-divider></mat-divider>
+      </ng-container>
+  </mat-menu>
+</mat-toolbar> -->
+<mat-toolbar fxLayout="row" color="primary">
+  <mat-icon style="margin-right:20px;" >home</mat-icon>
+  <span fxFlex>LTI HOME SUPPORT</span>
+    <a mat-button fxHide.xs routerLink="frontpage">Home</a>
+    <a mat-button fxHide.xs routerLink="elicalc">Eligiblity Calculator</a>
+    <a mat-button fxHide.xs routerLink="emicalc">Emi Calculator</a>
+    <a mat-button fxHide.xs routerLink="adminlogin">Admin Login</a>
+    <a mat-button fxHide.xs routerLink="userreg">Application Form</a>
+    <a mat-button fxHide.xs routerLink="userlogin">User LogIn</a>
+    <a mat-button fxHide.xs routerLink="aboutus">About Us</a>
+    <a mat-button fxHide.xs routerLink="faq">FAQ</a>
+  <button mat-icon-button [matMenuTriggerFor]="dropMenu" fxHide fxShow.xs>
+      <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #dropMenu="matMenu">
+      <ng-container>
+          <button mat-menu-item routerLink="frontpage">Home</button>
+          <button mat-menu-item routerLink="elicalc"> Eligibility Calculator</button>
+          <button mat-menu-item routerLink="emicalc"> Emi Calculator</button>
+          <button mat-menu-item routerLink="adminlogin"> Admin Login</button>
+          <button mat-menu-item routerLink="userreg"> Application Form</button>
+          <button mat-menu-item routerLink="userlogin"> User Login</button>
+          <button mat-menu-item routerLink="aboutus"> Aboutus</button>
+          <button mat-menu-item routerLink="faq"> FAQ</button>
+          <mat-divider></mat-divider>
+      </ng-container>
+  </mat-menu>
+</mat-toolbar>
+  
+  
+ 
+  
