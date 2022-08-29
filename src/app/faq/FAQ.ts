@@ -1,16 +1,17 @@
 export class FAQ{
        
-    
-    question:any;
-    solution:any;
     customername:any;
     customeremail:any;
     querydes:any;
-    constructor(solution:any,question:any,customername:any,customeremail:any,querydes:any){
-        this.solution=solution;
-        this.question=question;
-        this.customeremail=customeremail;
+    question:any;
+    solution:any;
+    
+    constructor(customername:any,customeremail:any,querydes:any,question:any,solution:any){
         this.customername=customername;
+        this.customeremail=customeremail;
         this.querydes=querydes;
+        this.question=question;
+        this.solution=solution;
+        
     }
 }

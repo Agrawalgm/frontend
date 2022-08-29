@@ -12,39 +12,43 @@ import {FAQ} from './FAQ'
 })
 export class FaqComponent implements OnInit {
 
-  constructor(private faq:FaqService,private router:Router) { }
-  regform!: FormGroup;
-
+  constructor(private fa:FaqService,private router:Router) { }
+  
+  customername:any;
+  customeremail:any;
+  querydes:any;
+  faq1!:FAQ;
+  question:any;
+  solution:any;
   faqlist : FAQ[]=[];
   ngOnInit(): void {
     this.getfaqlist();
   }
   getfaqlist()
   {
-    this.faq.allfaqlist().subscribe(
+    this.fa.allfaqlist().subscribe(
       response =>
        { 
         this.faqlist = response;    
         console.log(this.faqlist);
        });
   }
-  // cust_name:any;
-  // cust_email:any;
-  // cust_descp=any;
-  // clicking(val:any){
-  //   this.cust_name = val.name;
-  //   this.cust_email = val.email;
-  //   this.cust_descp = val.Comments;
-  //   this.updateStatus();
-  //   }
-
-  // updateStatus(cust_name:any,cust_email:any,cust_descp:any){
-
-  //   this.faq.updateApplication().subscribe(
-  //     response =>
-  //     {
-  //       alert("Approved");
-
-  //     }
-  //   )
+ onSubmit(faq88:any){
+  this.customername = faq88.customername;
+  this.customeremail = faq88.customeremail;
+  this.querydes=faq88.querydes;
+  this. question=null;
+  this.solution=null;
+  this.faq1 = new FAQ(this.customername, this.customeremail,this.querydes,this.question,this.solution);
+ console.log(this.faq1);
+  this.fa.updateApplication(this.faq1).subscribe((response: any) => {
+    console.log(response);
+    this.faq1 = response;
+    if(response){
+      alert("Successfully Submitted");
+    }else{
+      alert("User does not exist");
+    }
+  })
+ }
 }
