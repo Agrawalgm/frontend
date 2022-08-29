@@ -13,7 +13,7 @@ export class AdminloginService {
   private baseUrl="http://localhost:8786/admin"
 
   public loginAdminFromRemote(admin : AdminLogin):Observable<any>{
-    console.log(admin)
+    //console.log(admin)
   return this.http.post<any>(this.baseUrl +"/adminlogin",admin);
 
   }

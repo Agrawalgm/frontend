@@ -38,6 +38,6 @@ public getApplicationListByStatus(status:string){
     // let userDetails = JSON.parse(localStorage.getItem("user_data")|| "");
    
     return this.httpSer.get<Application[]>(this.baseurl+"/get-application-by-userId/"+userId);
-  }
+}
   
 }
