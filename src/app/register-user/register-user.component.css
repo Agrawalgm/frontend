@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins',sans-serif;
+    
   }
 body{
     height: 100vh;
@@ -10,13 +11,35 @@ body{
     justify-content: center;
     align-items: center;
     padding: 10px;
+   
+  }
+  .title{
+    background: #4054b4;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 45px;
+  font-weight: 500;
+  position: relative;
+  color: white;
+  }
+  .super{
     background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 25px;
   }
   .container{
     max-width: 700px;
     width: 100%;
     background-color: #fff;
-    padding: 25px 30px;
+    padding: 35px 30px;
     border-radius: 5px;
     box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+   
   }
+  ::placeholder{
+    padding-left: 5px; 
+    font-size: small; 
+  }
+ 
