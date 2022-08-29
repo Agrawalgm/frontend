@@ -12,13 +12,19 @@ export class AdminApplicationService {
 
   constructor(private httpSer: HttpClient) { }
 
-  public getApplicationList(){
+  public getapplicationlist(){
     return this.httpSer.get<Application[]>(this.baseurl+"/allapplns");
   }
 
 
-  public getPendingApplnList(){
+  public getpendingapplnlist(){
     return this.httpSer.get<Application[]>(this.baseurl+"/pendingapplns");
+  }
+  public getapprovedapplnlist(){
+    return this.httpSer.get<Application[]>(this.baseurl+"/approvedapplns");
+  }
+  public getrejectedapplnlist(){
+    return this.httpSer.get<Application[]>(this.baseurl+"/rejectedapplns");
   }
  
 

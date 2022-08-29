@@ -10,26 +10,72 @@ import { Application } from './Application';
 })
 export class AdmindashboardComponent implements OnInit {
 
-  applicationList:Application[]=[];
-  constructor(private applSer:AdminApplicationService,private router:Router) { }
+  applicationlist:Application[]=[];
+  approvedlist:Application[]=[];
+  rejectedlist:Application[]=[];
+  pendinglist:Application[]=[];
+  constructor(private applser:AdminApplicationService,private router:Router) { }
+ 
 
- count :any ;
-  status:any;
-ngOnInit(): void {
-  this.getAllApplnList();
-}
-  getAllApplnList() {
-    this.applSer.getApplicationList().subscribe(
-      response => { 
-        this.applicationList = response;
-        console.log(this.applicationList);
-      });
+
+allappcount:any;
+approvedcount:any;
+pendingcount:any;
+status:any;
+ngOnInit(): void 
+ {
+  this.getallapplist();
+  this.getpendinglist();
+  this.getapprovedlist();
+  this.getrejectedlist();
+ }
+  getallapplist()
+   {
+     this.applser.getapplicationlist().subscribe(
+      response =>
+       { 
+        this.applicationlist = response;
+        this.allappcount=this.applicationlist.length;        
+        console.log(this.applicationlist);
+       });
+   }
+  getpendinglist()
+  {
+    this.applser.getpendingapplnlist().subscribe(
+      response =>
+       { 
+        this.pendinglist = response;
+        this.pendingcount=this.pendinglist.length;        
+        console.log(this.pendinglist);
+       });
   }
+  getapprovedlist()
+  {
+    this.applser.getapprovedapplnlist().subscribe(
+      response =>
+       { 
+        this.approvedlist = response;
+        this.approvedcount=this.approvedlist.length;        
+        console.log(this.approvedlist);
+       });
+  }
+  getrejectedlist()
+  {
+    this.applser.getrejectedapplnlist().subscribe(
+      response =>
+       { 
+        this.rejectedlist = response;
+        console.log(this.rejectedlist);
+       });
+  }
+  
 
-  toggle = "approve";  
+
+
+  toggle = "Approved";  
   updateStatus(applicationId:number){
 
-    this.applSer.updateApplication(applicationId,this.toggle).subscribe(
+    this.applser.updateApplication(applicationId,this.toggle).subscribe(
       response =>
       {
         alert("Approved");
@@ -40,11 +86,11 @@ ngOnInit(): void {
 
   }
 
-  toggle1="rejected";
+  toggle1="Rejected";
 
   updateStatus1(applicationId:number){
 
-    this.applSer.updateApplication(applicationId,this.toggle1).subscribe(
+    this.applser.updateApplication(applicationId,this.toggle1).subscribe(
       response =>
       {
         alert("Rejected");
@@ -53,8 +99,18 @@ ngOnInit(): void {
     )
 }
 onClick(pending:any){}
-
-
+isapproved = false;    
+displayapproved() {  
+  this.isapproved = !this.isapproved;  
+} 
+ispending = false;    
+displaypending() {  
+  this.ispending = !this.ispending;  
+} 
+isrejected = false;    
+displayrejected() {  
+  this.isrejected = !this.isrejected;  
+} 
 
 
 

@@ -12,7 +12,7 @@
     <div class="card" style="margin-top: 30px;padding-top: 15px;">
         <div class="container">
           <h4 style="font-weight: 700;font-size: large;">Total Number of Applications:.</h4>
-          <h5>{{count}}</h5>
+          <h5>{{allappcount}}</h5>
           <p class="title"></p>
         </div>
       </div>
@@ -22,7 +22,7 @@
         <div class="card" style="margin-top: 30px;padding-top: 15px;">
             <div class="container">
               <h6 style="font-weight: 700;font-size: large;">Number Of Approved Applications:.</h6>
-              <h5>{{count}}</h5>
+              <h5>{{approvedcount}}</h5>
             </div>
           </div></div>
           <div class="col-sm-1"></div>
@@ -30,79 +30,167 @@
             <div class="card" style="margin-top: 30px;padding-top: 15px;">
                 <div class="container">
                   <h4 style="font-weight: 700;font-size: large;">Number Of Pending Applications:.</h4>
-                  <h5>{{count}}</h5>
+                  <h5>{{pendingcount}}</h5>
                 </div>
               </div>
- </div>
+             </div>
   </div>
+
+
     <div class="row"> 
-        <div class="col-sm-1">
-        </div>
-<div class="col-sm-10">
-    <div id="admin-div" [align]="'center'" > 
-        <h5 style="font-style:italic ;font-size: xx-large;">Applications</h5>
-         <!-- <div class="container" >
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10">
+        <div id="admin-div" [align]="'center'" > 
+        <button mat-button [matMenuTriggerFor]="appre" ><h5 style="font-style:italic ;font-size: xx-large;">Applications</h5></button>
+            <mat-menu #appre="matMenu">
+                 <button mat-menu-item (click)=displayapproved()>Approved</button>
+                 <button mat-menu-item (click)=displayrejected()>Rejected</button>
+                 <button mat-menu-item (click)=displaypending()>Pending</button>
+            </mat-menu>
+            <div *ngIf="isapproved">
+              <h4>Approved Applications.</h4>  
+              <div>
+                 <Table class="table table-striped">
+                   <thead>
+                   <tr>
+                   <th>User Id</th>
+                   <th>First Name</th>
+                   <th>Last Name</th>
+                   <th>Email Id</th>
+                   <th>Application Id</th>
+                   <th>Loan Amount</th>
+                   <th>Tenure</th>
+                   <th>Interest Rate</th>
+                   <th>Aadhar No</th>
+                   <th>Pan No</th>
+                   <th>Status</th>
+                   </tr>
+                   </thead>
+                   <tbody>
+                   <tr  *ngFor = "let a of approvedlist; let i=index;"  >
+                   <td> {{a.user.userId}}</td>
+                   <td>{{ a.user.firstName }}</td>
+                   <td>{{ a.user.lastName }}</td>
+                   <td>{{ a.user.email }}</td>
+                   <td> {{a.applicationId}}</td>
+                   <td> {{a.loanAmount}}</td>
+                   <td> {{a.tenure}}</td>
+                   <td> {{a.interest}}</td>
+                   <td>{{ a.user.aadharNo}}</td>
+                   <td>{{ a.user.panNo }}</td>
+                   <td> {{a.status}}</td>
+                   </tr>
+                   </tbody>
+                 </Table>
+
+                </div>
+            </div>
+
+
+
+            <div *ngIf="isrejected">
+              <h4>Rejected Applications.</h4> 
+              <div>
+                 <Table class="table table-striped">
+                   <thead>
+                   <tr>
+                   <th>User Id</th>
+                   <th>First Name</th>
+                   <th>Last Name</th>
+                   <th>Email Id</th>
+                   <th>Application Id</th>
+                   <th>Loan Amount</th>
+                   <th>Tenure</th>
+                   <th>Interest Rate</th>
+                   <th>Aadhar No</th>
+                   <th>Pan No</th>
+                   <th>Status</th>
+                   </tr>
+                   </thead>
+                   <tbody>
+                   <tr  *ngFor = "let a of rejectedlist; let i=index;"  >
+                   <td> {{a.user.userId}}</td>
+                   <td>{{ a.user.firstName }}</td>
+                   <td>{{ a.user.lastName }}</td>
+                   <td>{{ a.user.email }}</td>
+                   <td> {{a.applicationId}}</td>
+                   <td> {{a.loanAmount}}</td>
+                   <td> {{a.tenure}}</td>
+                   <td> {{a.interest}}</td>
+                   <td>{{ a.user.aadharNo}}</td>
+                   <td>{{ a.user.panNo }}</td>
+                   <td> {{a.status}}</td>
+                   </tr>
+                   </tbody>
+                 </Table>
+
+                </div>
+            </div>
+
+
+
+
+            <div *ngIf="ispending">
+              <h4>Pending Applications.</h4> 
+              <div>
+                 <Table class="table table-striped">
+                   <thead>
+                   <tr>
+                   <th>User Id</th>
+                   <th>First Name</th>
+                   <th>Last Name</th>
+                   <th>Email Id</th>
+                   <th>Application Id</th>
+                   <th>Loan Amount</th>
+                   <th>Tenure</th>
+                   <th>Interest Rate</th>
+                   <th>Aadhar No</th>
+                   <th>Pan No</th>
+                   <th>Status</th>
+                   <th>Approve/Reject</th>
+                   </tr>
+                   </thead>
+                   <tbody>
+                   <tr  *ngFor = "let a of pendinglist ; let i=index;"  >
+                   <td> {{a.user.userId}}</td>
+                   <td>{{ a.user.firstName }}</td>
+                   <td>{{ a.user.lastName }}</td>
+                   <td>{{ a.user.email }}</td>
+                   <td> {{a.applicationId}}</td>
+                   <td> {{a.loanAmount}}</td>
+                   <td> {{a.tenure}}</td>
+                   <td> {{a.interest}}</td>
+                   <td>{{ a.user.aadharNo}}</td>
+                   <td>{{ a.user.panNo }}</td>
+                   <td> {{a.status}}</td>
+                   <td>
+                   <button class="btn5" style="margin-bottom:4px ;" [type]="'submit'" (click)="updateStatus(a.applicationId)">Approve</button>
+                   <button class="btn5" [type]="'submit'" (click)="updateStatus1(a.applicationId)">Reject</button>
+                   </td>
+                   </tr>
+                   </tbody>
+                 </Table>
+
+                </div>
+            </div>
+
+
+
+
+          </div>
+</div>
+</div>
+
+
+
+
+
+
+<!-- <div class="container" >
             <div class="switch" >
                 <div class="register" (click)="onClick('pending')" [ngClass]="{active:status=='pending'}">Pending</div>
                 <div class="register" (click)="     onClick('approved')" [ngClass]="{active:status=='approved'}">Approved</div>
                 <div class="register" (click)="onClick('rejected')" [ngClass]="{active:status=='rejected'}">Rejected</div>
             </div>
-        </div>  -->
-  </div>
-  <div>
-    <Table class="table table-striped">
-        <thead>
-            <tr>
-                <th>User Id</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Email Id</th>
-                <th>Application Id</th>
-                <th>Loan Amount</th>
-                <th>Tenure</th>
-                <th>Interest Rate</th>
-                <th>Aadhar No</th>
-                <th>Pan No</th>
-                <th>Status</th>
-                <th>Approve/Reject</th>
-            </tr>
-        </thead>
-
-        <tbody>
-           <tr  *ngFor = "let a of applicationList; let i=index;"  >
-                <td> {{a.user.userId}}</td>
-                <td>{{ a.user.firstName }}</td>
-                <td>{{ a.user.lastName }}</td>
-                <td>{{ a.user.email }}</td>
-                <td> {{a.applicationId}}</td>
-                <td> {{a.loanAmount}}</td>
-                <td> {{a.tenure}}</td>
-                <td> {{a.interest}}</td>
-                <td>{{ a.user.aadharNo}}</td>
-                <td>{{ a.user.panNo }}</td>
-                <td> {{a.status}}</td>
-                <div  *ngIf="status=='Approved';then thisblock else elseBlock" ></div>
-                <ng-template #thisblock>
-                  <td >
-                    <p>Appr</p>
-                    </td>  
-                </ng-template>   
-                <ng-template #elseBlock>
-                  <td>
-                    <button style="background-color: #15b056f0;" [type]="'submit'" (click)="updateStatus(a.applicationId)">approve</button>
-                    <button style="background-color: #cd1741f0;" [type]="'submit'" (click)="updateStatus1(a.applicationId)">reject</button>
-                    </td>
-                </ng-template>
-                
-                <div (count)="(count)+5"></div>
-            </tr>
-        </tbody>
-    </Table>
-
-  </div>
-</div>
-        <div class="col-sm-1">
-            
-        </div>
-</div> 
+        </div>   --> 
 </body>
