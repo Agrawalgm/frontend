@@ -16,11 +16,7 @@ admin = new AdminLogin();
   constructor(private _service:AdminloginService , private route:Router,private fb:FormBuilder) { }
 
   ngOnInit(): void {
-    this.adminloginf=this.fb.group({
-  adminId:['',Validators.required],
-    })
   }
-
   adminlogin(){
     this._service.loginAdminFromRemote(this.admin).subscribe((response: any) => {
     console.log(this.admin = response);

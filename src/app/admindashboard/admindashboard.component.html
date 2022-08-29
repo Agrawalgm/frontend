@@ -1,7 +1,3 @@
-
-
-
-
 <body > 
   <div class="row" style="margin-bottom: 15px;">
     <div class="col-sm-1">
@@ -85,10 +81,10 @@
                 <td>{{ a.user.aadharNo}}</td>
                 <td>{{ a.user.panNo }}</td>
                 <td> {{a.status}}</td>
-                <div  *ngIf="status=='approve';then thisblock else elseBlock" ></div>
+                <div  *ngIf="status=='Approved';then thisblock else elseBlock" ></div>
                 <ng-template #thisblock>
                   <td >
-                    <p>Approved</p>
+                    <p>Appr</p>
                     </td>  
                 </ng-template>   
                 <ng-template #elseBlock>

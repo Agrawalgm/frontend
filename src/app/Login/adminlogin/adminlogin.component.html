@@ -6,10 +6,7 @@
   <form  #loginform="ngForm" (ngSubmit)="adminlogin()" class="form-horizontal form" [formGroup]="adminloginf">
      <div class="form-group">
       <label class="control-label " for="userId" style="margin-bottom: 5px;">Admin Id:<small style="color:red">*</small></label>
-        <input type="number" class="form-control id" placeholder="Enter Id"name="userId" [(ngModel)]="admin.adminId" formControlName="adminId">
-        <!-- <span class="help-block " *ngIf="adminloginf.get('adminId')?.errors && (adminloginf.get('adminId')?.touched || adminloginf.get('adminId')?.dirty)">
-          <span class="text-danger" *ngIf="adminloginf.get('adminId')?.errors?.['required']">
-            Admin ID required</span></span> -->
+        <input type="number" class="form-control id" placeholder="Enter Id"name="userId" [(ngModel)]="admin.adminId">
       </div>
       <div class="form-group">
       <label class="control-label " for="userName" style="margin-bottom: 5px;margin-top: 15px;">Admin User Name:<small style="color:red">*</small></label>
