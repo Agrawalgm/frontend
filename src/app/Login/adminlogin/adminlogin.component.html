@@ -3,22 +3,16 @@
   <div class="col-sm-5"></div>
   <div class="user col-sm-4">
   <h1>ADMIN LOGIN</h1>
-  <form  #loginform="ngForm" (ngSubmit)="adminlogin()" class="form-horizontal form" [formGroup]="adminloginf">
-     <div class="form-group">
-      <label class="control-label " for="userId" style="margin-bottom: 5px;">Admin Id:<small style="color:red">*</small></label>
-        <input type="number" class="form-control id" placeholder="Enter Id"name="userId" [(ngModel)]="admin.adminId">
-      </div>
+  <form  #AdminLoginForm="ngForm" (ngSubmit)="onSubmit(AdminLoginForm.value)" class="form-horizontal form">
       <div class="form-group">
       <label class="control-label " for="userName" style="margin-bottom: 5px;margin-top: 15px;">Admin User Name:<small style="color:red">*</small></label>
       
-        <input type="text" class="form-control name" placeholder="Enter Name" name="userName" [(ngModel)]="admin.userName"
-        
-         required #adminUS="ngModel" [class.is-invaild]="adminUS.invalid && adminUS.touched">
+        <input type="text" class="form-control userName" placeholder="Enter Name" name="userName" [ngModel]="userName" required #adminUS="ngModel" [class.is-invaild]="adminUS.invalid && adminUS.touched">
       </div>
       <div class="form-group">
-      <label class="control-label" for="pwd" style="margin-bottom: 5px;margin-top: 15px;">Password:<small style="color:red">*</small></label>
+      <label class="control-label" for="password" style="margin-bottom: 5px;margin-top: 15px;">Password:<small style="color:red">*</small></label>
              
-        <input type="password" class="form-control pass"  placeholder="Enter password" name="pwd" [(ngModel)]="admin.password"
+        <input type="password" class="form-control password"  placeholder="Enter password" name="password" [ngModel]="password"
         required #adminP="ngModel" [class.is-invaild]="adminP.invalid && adminP.touched"> </div>
        <div class="form-group">        
          <div class="">

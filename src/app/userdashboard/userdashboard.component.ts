@@ -12,7 +12,7 @@
   export class UserdashboardComponent implements OnInit {
   
     applicationList:any;
-    // application!: Application;
+   // application!: Application;
     uId:number=10001;
     
     constructor(private applSer:AdminApplicationService, private userDetSer:RegisterUserHttpService, private router:Router) { }

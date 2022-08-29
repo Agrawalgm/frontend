@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm,FormBuilder, Validators } from '@angular/forms';
 import { AdminloginService } from 'src/app/services/adminlogin.service';
-import { AdminLogin } from 'src/app/admin-login';
 import { Route, Router } from '@angular/router';
-
+import {AdminLogin} from './AdminLogin'
 @Component({
   selector: 'app-adminlogin',
   templateUrl: './adminlogin.component.html',
@@ -11,25 +10,30 @@ import { Route, Router } from '@angular/router';
 })
 export class AdminloginComponent implements OnInit {
 
-admin = new AdminLogin();
- adminloginf : any;
-  constructor(private _service:AdminloginService , private route:Router,private fb:FormBuilder) { }
+  userName: string = "";
+  password: string = "";
+  admin !: AdminLogin;
+  constructor(private service:AdminloginService , private route:Router,private fb:FormBuilder) { }
 
   ngOnInit(): void {
   }
-  adminlogin(){
-    this._service.loginAdminFromRemote(this.admin).subscribe((response: any) => {
-    console.log(this.admin = response);
-   
-    if(response){
-      alert("log in success");
-      this.route.navigate(['/admindashboard'])
+ 
 
-    }else{
-      alert("User does not exist");
-    }
-  })
+  onSubmit(adminLoginForm: any): void {
+    this.userName = adminLoginForm.userName;
+    this.password = adminLoginForm.password
+    this.admin = new AdminLogin(this.userName, this.password);
 
-}
+    this.service.loginAdminFromRemote(this.admin).subscribe((response: any) => {
+      console.log(response);
+      this.admin = response;
+      if(response){
+        alert("log in success");
+        this.route.navigate(['/admindashboard'])
+      }else{
+        alert("Admin does not exist");
+      }
+    })
 
+  }
 }
