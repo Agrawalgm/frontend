@@ -45,4 +45,9 @@
     border-radius: 10px;
     height: 30px;
   }
-  
+  label {
+    height: 10px;
+    display: flex;
+    
+    cursor: default;
+  }

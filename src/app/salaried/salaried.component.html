@@ -1,5 +1,4 @@
-<body background="https://i0.wp.com/carrickswan.com/wp-content/uploads/2016/04/site-background.jpg?ssl=1">
-
+<link rel="stylesheet" href="salaried.component.css">
 <div class="container addform">
   <br>  
   <br>
@@ -12,10 +11,10 @@
         
         <br>
       
-  <div class="form-group row">
+  <div class="form-group">
       <label for="retirementAge" class="col-sm-2 col-form-label" [ngClass]="{'has-error':salariedForm.get('retirementAge')?.errors && (salariedForm.get('retirementAge')?.touched || salariedForm.get('retirementAge')?.dirty)}"><b>Retirement Age: </b></label><br>
      <div class="col-sm-5"> 
-    <input type="number" class="form-control" id="retirementAge" formControlName="retirementAge" placeholder="Enter Retirement Age">
+    <input type="number" class="form-control" id="retirementAge" formControlName="retirementAge">
     <span class="help-block " *ngIf="salariedForm.get('retirementAge')?.errors && (salariedForm.get('retirementAge')?.touched || salariedForm.get('retirementAge')?.dirty)">
     <span class="text-danger" *ngIf="salariedForm.get('retirementAge')?.errors?.['required']">
       Retirement Age is required
@@ -24,10 +23,10 @@
   </div>
   </div><br>
       
- <div class="form-group row">
-     <label for="monthlySalary" class="col-sm-2 col-form-label" [ngClass]="{'has-error':salariedForm.get('monthlySalary')?.errors && (salariedForm.get('monthlySalary')?.touched || salariedForm.get('monthlySalary')?.dirty)}" ><b>Monthly Salary:</b></label><br>
+ <div class="form-group">
+     <label for="monthlySalary" class="col-sm-2 col-form-label" [ngClass]="{'has-error':salariedForm.get('monthlySalary')?.errors && (salariedForm.get('monthlySalary')?.touched || salariedForm.get('monthlySalary')?.dirty)}" ><b class="dirty">Monthly Salary:</b></label><br>
       <div class="col-sm-5">
-    <input type="number" class="form-control" id="monthlySalary" formControlName="monthlySalary" placeholder="Enter Monthly Salary">
+    <input type="number" class="form-control" id="monthlySalary" formControlName="monthlySalary">
     <span class="help-block " *ngIf="salariedForm.get('monthlySalary')?.errors && (salariedForm.get('monthlySalary')?.touched || salariedForm.get('monthlySalary')?.dirty)">
       <span class="text-danger" *ngIf="salariedForm.get('monthlySalary')?.errors?.['required']">
         Monthly Salary is required
@@ -37,10 +36,10 @@
   </div>
   <br>
 
-      <div class="form-group row">
-      <label for="organization" class="col-sm-2 col-form-label" [ngClass]="{'has-error':salariedForm.get('organization')?.errors && (salariedForm.get('organization')?.touched || salariedForm.get('organization')?.dirty)}"><b>Organization</b></label><br>
+      <div class="form-group">
+      <label for="organization" class="col-sm-2 col-form-label" [ngClass]="{'has-error':salariedForm.get('organization')?.errors && (salariedForm.get('organization')?.touched || salariedForm.get('organization')?.dirty)}"><b>Organization:</b></label><br>
        <div class="col-sm-5">
-     <input type="text" class="form-control" id="organization" formControlName="organization" placeholder="Enter Organization">
+     <input type="text" class="form-control" id="organization" formControlName="organization">
      <span class="help-block " *ngIf="salariedForm.get('organization')?.errors && (salariedForm.get('organization')?.touched || salariedForm.get('organization')?.dirty)">
       <span class="text-danger" *ngIf="salariedForm.get('organization')?.errors?.['required']">
         Organization is required
@@ -49,7 +48,9 @@
       </div>
    </div>
    <br>
-      <button type="submit"  class="btn btn-info">NEXT</button> 
+   <div class="button">
+   <input type="submit" value="Next">
+ </div> 
 </form>
 </div>
 </div>
