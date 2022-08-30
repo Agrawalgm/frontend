@@ -1,0 +1,53 @@
+.super{
+    background-color:   rgba(14, 160, 9, 0.719);
+    color: white;
+    box-shadow: 0 5px 10px rgba(8, 8, 8, 0.281);
+    border-radius: 5px;
+    border-color: transparent;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+    
+  }
+  body{
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+   
+  }
+  .heading{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 45px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  }
+  .row{
+    max-width: 700px;
+    width: 100%;
+    background-color: #fff;
+    padding: 35px 30px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+   
+  }
+  .form-control{
+    border-style: dotted;
+    border-color: rgb(233, 167, 241);
+    border-radius: 10px;
+    height: 30px;
+  }
+  label {
+    height: 10px;
+    display: flex;
+    
+    cursor: default;
+  }
