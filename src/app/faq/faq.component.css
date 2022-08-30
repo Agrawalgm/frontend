@@ -17,3 +17,16 @@ body{
     height: auto;
     padding-bottom: 200px;
   }
+   .card {
+    box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.2);
+    margin: 15px;
+    border-radius: 20px;
+    padding: 20px 5px;
+    font-style: normal;
+    backface-visibility: visible;
+    background-color: #575b73;
+    border: 0px;
+    margin-top: 30%; 
+    color: white;
+  
+  }

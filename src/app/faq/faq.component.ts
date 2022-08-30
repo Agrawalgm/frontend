@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormGroup} from '@angular/forms'
-import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
 import {FaqService}from '../services/faq.service'
 import {FAQ} from './FAQ'
 
@@ -11,9 +9,7 @@ import {FAQ} from './FAQ'
   styleUrls: ['./faq.component.css']
 })
 export class FaqComponent implements OnInit {
-
   constructor(private fa:FaqService,private router:Router) { }
-  
   customername:any;
   customeremail:any;
   querydes:any;

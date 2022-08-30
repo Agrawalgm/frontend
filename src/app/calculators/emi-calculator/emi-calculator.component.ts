@@ -35,11 +35,11 @@ export class EmiCalculatorComponent implements OnInit {
     
 
     var roi = ((this.r/12)/100)
-    var top = Math.pow((1 + roi), this.noofmonth);
+    var top = Math.pow((1 + roi), (this.noofmonth*12));
     var bottom = top - 1;
     var sp = top / bottom;
     this.emi = Number((this.loan_amt * roi) * sp).toFixed(0);
-    this.totalamt=Number(this.noofmonth*this.emi).toFixed(0);
+    this.totalamt=Number((this.noofmonth*12)*this.emi).toFixed(0);
     this.value=true;    
   }
   isShown: boolean = false ; // hidden by default

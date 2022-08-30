@@ -2,17 +2,20 @@
 <div class="row">
     <div class="from-group col-sm-6">
         <div class="row">
-      <div class="col-sm-4" ></div>
-      <div class="col-sm-8">
+      <div class="col-sm-3" ></div>
+      <div class="col-sm-7">
+        <div class="card" style="align-items: center;">
            <form #faq88="ngForm" (ngSubmit)="onSubmit(faq88.value)">
-             <table style="margin-top: 30%;">
+             <table >
              <tr class="head">Enter Question</tr><br>
              <tr id="tab"><input type="text" class="form-control" name="customername" placeholder="Enter your name" [ngModel]="customername"/></tr><br>
              <tr id="tab"><input type="email" class="form-control" name="customeremail" placeholder="Enter a valid Email Adress" [ngModel]="customeremail"/></tr><br>
              <tr><textarea name="querydes" id="Comments" rows="4" cols="40" class="form-control" placeholder="Enter a Question with description" [ngModel]="querydes"></textarea></tr>
-             <br> <button type="submit" class="btn btn-primary" >Submit</button>
+             <br> <button type="submit" class="btn btn-primary" style="background-color: #6672b6;border: 0px;" >Submit</button>
         
-          </table></form></div></div>
+          </table></form>
+        </div></div></div>
+        <div class="col-sm-1"></div>
     </div>
 
     <div class="col-sm-6">

@@ -87,13 +87,19 @@ ngOnInit(): void
 isapproved = false;    
    displayapproved() {  
       this.isapproved = !this.isapproved;  
+      this.ispending = this.ispending;
+      this.isrejected = this.isrejected; 
 } 
 ispending = false;    
    displaypending() {  
-      this.ispending = !this.ispending;  
+      this.ispending = !this.ispending; 
+      this.isapproved = this.isapproved;  
+      this.isrejected = this.isrejected; 
 } 
 isrejected = false;    
     displayrejected() {  
+      this.isapproved = this.isapproved;  
+      this.ispending = this.ispending;
       this.isrejected = !this.isrejected;  
 } 
 reloadCurrentPage() {
