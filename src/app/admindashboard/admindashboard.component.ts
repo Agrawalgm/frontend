@@ -14,14 +14,12 @@ export class AdmindashboardComponent implements OnInit {
   approvedlist:Application[]=[];
   rejectedlist:Application[]=[];
   pendinglist:Application[]=[];
+  allappcount:any;
+  approvedcount:any;
+  pendingcount:any;
+  status:any;
   constructor(private applser:AdminApplicationService,private router:Router) { }
- 
-
-
-allappcount:any;
-approvedcount:any;
-pendingcount:any;
-status:any;
+  
 ngOnInit(): void 
  {
   this.getallapplist();
@@ -68,51 +66,38 @@ ngOnInit(): void
         console.log(this.rejectedlist);
        });
   }
-  
-
-
-
   toggle = "Approved";  
   updateStatus(applicationId:number){
-
     this.applser.updateApplication(applicationId,this.toggle).subscribe(
       response =>
       {
         alert("Approved");
-
-      }
-    )
-
-
+      });
   }
 
   toggle1="Rejected";
-
   updateStatus1(applicationId:number){
-
     this.applser.updateApplication(applicationId,this.toggle1).subscribe(
       response =>
       {
         alert("Rejected");
-
       }
     )
 }
-onClick(pending:any){}
 isapproved = false;    
-displayapproved() {  
-  this.isapproved = !this.isapproved;  
+   displayapproved() {  
+      this.isapproved = !this.isapproved;  
 } 
 ispending = false;    
-displaypending() {  
-  this.ispending = !this.ispending;  
+   displaypending() {  
+      this.ispending = !this.ispending;  
 } 
 isrejected = false;    
-displayrejected() {  
-  this.isrejected = !this.isrejected;  
+    displayrejected() {  
+      this.isrejected = !this.isrejected;  
 } 
-
-
-
+reloadCurrentPage() {
+  window.location.reload();
+ }
 }
 

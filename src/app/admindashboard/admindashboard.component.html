@@ -39,13 +39,13 @@
 
     <div class="row"> 
         <div class="col-sm-1"></div>
-        <div class="col-sm-10">
+        <div class="col-sm-11">
         <div id="admin-div" [align]="'center'" > 
         <button mat-button [matMenuTriggerFor]="appre" ><h5 style="font-style:italic ;font-size: xx-large;">Applications</h5></button>
             <mat-menu #appre="matMenu">
                  <button mat-menu-item (click)=displayapproved()>Approved</button>
                  <button mat-menu-item (click)=displayrejected()>Rejected</button>
-                 <button mat-menu-item (click)=displaypending()>Pending</button>
+                 <button mat-menu-item (click)="displaypending()">Pending</button>
             </mat-menu>
             <div *ngIf="isapproved">
               <h4>Approved Applications.</h4>  
@@ -164,8 +164,8 @@
                    <td>{{ a.user.panNo }}</td>
                    <td> {{a.status}}</td>
                    <td>
-                   <button class="btn5" style="margin-bottom:4px ;" [type]="'submit'" (click)="updateStatus(a.applicationId)">Approve</button>
-                   <button class="btn5" [type]="'submit'" (click)="updateStatus1(a.applicationId)">Reject</button>
+                   <button class="btn5" style="margin-bottom:4px ;" [type]="'submit'" (click)="updateStatus(a.applicationId);reloadCurrentPage()">Approve</button>
+                   <button class="btn5" [type]="'submit'" (click)="updateStatus1(a.applicationId);reloadCurrentPage()">Reject</button>
                    </td>
                    </tr>
                    </tbody>
