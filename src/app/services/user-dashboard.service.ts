@@ -14,4 +14,7 @@ export class UserDashboardService {
   public getApplicationList(){
     return this.httpSer.get<Application[]>(this.baseurl+"/allapplns");
   }
+  public getloandetail(email:string){
+    return this.httpSer.get<Application[]>(this.baseurl+"/get-application-by-email/"+email);
+  }
 }

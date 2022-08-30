@@ -1,7 +1,7 @@
 export class userdashboard {
-    applicationId: string = "";
+    email: string;
   
-    constructor(applicationId: string) {
-      this.applicationId = applicationId;
+    constructor(email: string) {
+      this.email = email;
     }
   }

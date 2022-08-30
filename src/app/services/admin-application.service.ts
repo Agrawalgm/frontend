@@ -16,7 +16,9 @@ export class AdminApplicationService {
     return this.httpSer.get<Application[]>(this.baseurl+"/allapplns");
   }
 
-
+  public getloandetail(mail:any){
+    return this.httpSer.get<Application[]>(this.baseurl+"/get-application-by-email/"+mail);
+  }
   public getpendingapplnlist(){
     return this.httpSer.get<Application[]>(this.baseurl+"/pendingapplns");
   }

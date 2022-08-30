@@ -1,9 +1,8 @@
-  import { Component, OnInit } from '@angular/core';
+  import { Component, OnInit} from '@angular/core';
   import { AdminApplicationService } from '../services/admin-application.service';
   import { RegisterUserHttpService } from '../services/register-user-http.service';
   import { Router } from '@angular/router';
-import { Application } from '../admindashboard/Application';
-
+  import { UserloginService } from 'src/app/services/userlogin.service';
   
   @Component({
     selector: 'app-userdashboard',
@@ -11,26 +10,31 @@ import { Application } from '../admindashboard/Application';
     styleUrls: ['./userdashboard.component.css']
   })
   export class UserdashboardComponent implements OnInit {
-  
-    applicationList:Application[]=[];
-    uId:number=10002;
+    applicationList:any;
+    mail :any ;
     
-    constructor(private applser:AdminApplicationService, private userDetSer:RegisterUserHttpService, private router:Router) { }
-  
-    ngOnInit(): void {
+    constructor(private applser:AdminApplicationService, private userDetSer:RegisterUserHttpService, private router:Router
+      , private userlogser:UserloginService) { 
+        this.userlogser.on<string>().subscribe(
+        data =>{
+          this.mail=data;
+        }
+      )}
      
-     this.getApplicationlist();
+
+    ngOnInit(): void {
+     this.getdetail();
     }
-    getApplicationlist() {
-      this.applser.getapplicationlist().subscribe(
+    getdetail() {
+      this.applser.getloandetail(this.mail).subscribe(
         response=>{
           this.applicationList=response;
-  
-          // console.log(response);
+           console.log(this.mail);
           console.log(this.applicationList);
         }
       )
     }
+
   
     
   
