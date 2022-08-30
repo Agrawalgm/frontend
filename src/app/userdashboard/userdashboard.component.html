@@ -23,9 +23,16 @@
           </thead>
           <tbody>
             <tr  *ngFor = "let a of applicationList"> 
-              <td> {{this.applicationList.applicationId}}</td>
-              <td>{{this.applicationList.user.userId}}</td>
-              <td>{{this.applicationList.status}}</td>  
+
+
+              <ng-template [ngIf]="a.user.userId != uId" [ngIfElse]="loggedOut">
+              </ng-template>
+              
+              <ng-template #loggedOut>
+                <td> {{a.applicationId}}</td>
+                <td>{{a.user.userId}}</td>
+                <td>{{a.status}}</td>
+              </ng-template>
            </tr> 
          </tbody>
        </table>

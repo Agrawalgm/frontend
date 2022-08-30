@@ -2,6 +2,7 @@
   import { AdminApplicationService } from '../services/admin-application.service';
   import { RegisterUserHttpService } from '../services/register-user-http.service';
   import { Router } from '@angular/router';
+import { Application } from '../admindashboard/Application';
 
   
   @Component({
@@ -11,18 +12,17 @@
   })
   export class UserdashboardComponent implements OnInit {
   
-    applicationList:any;
-   // application!: Application;
-    uId:number=10001;
+    applicationList:Application[]=[];
+    uId:number=10002;
     
-    constructor(private applSer:AdminApplicationService, private userDetSer:RegisterUserHttpService, private router:Router) { }
+    constructor(private applser:AdminApplicationService, private userDetSer:RegisterUserHttpService, private router:Router) { }
   
     ngOnInit(): void {
      
-     this.getApplicationByUserId();
+     this.getApplicationlist();
     }
-    getApplicationByUserId() {
-      this.applSer.getApplicationByUserId(this.uId).subscribe(
+    getApplicationlist() {
+      this.applser.getapplicationlist().subscribe(
         response=>{
           this.applicationList=response;
   
