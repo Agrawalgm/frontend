@@ -6,21 +6,33 @@
    <div class="container row" id="st5">
     <div class="col-sm-5"></div>
     <div class="user col-sm-4">
-   <form #userLoginForm="ngForm" (ngSubmit)="onSubmit(userLoginForm.value)">
+      <form [formGroup]="userLoginForm"
+      (ngSubmit)="onSubmit(userLoginForm.value)">
      <div class="form-group">
-       <label class="email" style="margin-bottom: 15px;">Email<small style="color:red">*</small>
+       <label class="email" style="margin-bottom: 15px;">Email:
  </label>
-       <input type="text" class="form-control email" placeholder="Enter mail id"name="email" [ngModel]="email" 
-       required  #adminId="ngModel" [class.is-invaild]="adminId.invalid && adminId.touched"  >
-          
+       <input type="text" class="form-control" placeholder="Enter mail id"name="email" [ngModel]="email" formControlName="email"/>
+       <span class="help-block " *ngIf="userLoginForm.get('email')?.errors && (userLoginForm.get('email')?.touched ||
+       userLoginForm.get('email')?.dirty)">
+               <span class="text-danger" *ngIf="userLoginForm.get('email')?.errors?.['required']">
+                 email is required
+                 </span>
+                 </span>
+
      </div><br>
      <div class="form-group">
-       <label class="password"style="margin-bottom: 15px;">Password<small style="color:red">*</small></label>
-       <input type="password" class="form-control password" placeholder="Enter password "name="password" [ngModel]="password" 
-       required  #adminId="ngModel" [class.is-invaild]="adminId.invalid && adminId.touched">
+       <label class="password"style="margin-bottom: 15px;">Password:</label>
+       <input type="password" class="form-control password" placeholder="Enter password "name="password" [ngModel]="password"formControlName="password"/>
+       <span class="help-block " *ngIf="userLoginForm.get('password')?.errors && (userLoginForm.get('password')?.touched ||
+       userLoginForm.get('password')?.dirty)">
+               <span class="text-danger" *ngIf="userLoginForm.get('password')?.errors?.['required']">
+                 password is required
+                 </span>
+                 </span>
+
      </div>
-     <p class ="mandatory" style="padding-top: 10px;"><small style="color:red">*</small><small class="form-text text-muted">fields are mandatory</small></p>
-     <button type="submit" class="btn">Login</button>
+    <br>
+     <button type="submit" class="btn" [disabled]="!userLoginForm.valid">Login</button>
    </form>
   </div>
   <div class="col-sm-3"></div>

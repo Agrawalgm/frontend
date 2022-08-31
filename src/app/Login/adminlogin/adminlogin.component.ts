@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm,FormBuilder, Validators } from '@angular/forms';
+import { NgForm,FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { AdminloginService } from 'src/app/services/adminlogin.service';
 import { Route, Router } from '@angular/router';
 import {AdminLogin} from './AdminLogin'
@@ -10,12 +10,15 @@ import {AdminLogin} from './AdminLogin'
 })
 export class AdminloginComponent implements OnInit {
 
-  userName: string = "";
-  password: string = "";
+  userName:any;
+  password:any;
   admin !: AdminLogin;
+  AdminLoginForm !:FormGroup;
   constructor(private service:AdminloginService , private route:Router,private fb:FormBuilder) { }
 
   ngOnInit(): void {
+    this.AdminLoginForm=this.fb.group({userName:['',Validators.required],
+     password:['',Validators.required]});
   }
  
 
