@@ -3,7 +3,7 @@
   import { RegisterUserHttpService } from '../services/register-user-http.service';
   import { Router } from '@angular/router';
   import { UserloginService } from 'src/app/services/userlogin.service';
-  
+  import {Application} from 'src/app/admindashboard/Application'
   @Component({
     selector: 'app-userdashboard',
     templateUrl: './userdashboard.component.html',
