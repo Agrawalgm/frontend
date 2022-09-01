@@ -1,13 +1,17 @@
 *{
     margin: 0;
     padding: 0;
-    display:block;
-    align-items: center;
-    justify-content: center;
+    
     font-family: 'Poppins',sans-serif;
     
   }
-  
+  .gunda{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #71b7e6;
+    height: 100%;
+  }
   .row{
     width: 800px;
     padding-bottom: 10px;
