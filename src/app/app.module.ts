@@ -27,7 +27,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import {MatMenuModule} from "@angular/material/menu";
-import { FaqComponent } from './faq/faq.component'
+import { FaqComponent } from './faq/faq.component';
+import { DocumentComponent } from './document/document.component'
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { FaqComponent } from './faq/faq.component'
   TypesalComponent,
   LoanApplicationComponent,
   UserdashboardComponent,
-  FaqComponent
+  FaqComponent,
+  DocumentComponent
   ],
   imports: [
     BrowserModule,

@@ -15,6 +15,7 @@ import { SalariedComponent } from './salaried/salaried.component';
 import { SelfemployedComponent } from './selfemployed/selfemployed.component';
 import { TypesalComponent } from './typesal/typesal.component';
 import { UserdashboardComponent } from './userdashboard/userdashboard.component';
+import { DocumentComponent } from './document/document.component'
 
 
 
@@ -35,7 +36,8 @@ const routes: Routes = [
   {path:'property',component:PropertyComponent},
   {path:'loanapplication',component:LoanApplicationComponent},
   {path:'userdashboard',component:UserdashboardComponent},
-  {path:'faq',component:FaqComponent}
+  {path:'faq',component:FaqComponent},
+  {path:'documents',component:DocumentComponent}
 ];
 
 @NgModule({
