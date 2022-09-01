@@ -49,3 +49,6 @@
       padding-right: 25px;
       margin-bottom: 20px;
     }
+    .mat-icon {
+      transform: scale(1.5);
+   }

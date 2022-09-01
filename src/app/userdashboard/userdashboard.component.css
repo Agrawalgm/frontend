@@ -27,3 +27,6 @@ tr{
   padding-top: 3px;
   padding-bottom: 3px;
 }
+.mat-icon {
+  transform: scale(1.5);
+}
