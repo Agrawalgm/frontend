@@ -16,8 +16,7 @@
                   Name is required
                   </span>
                   </span>
-              
-              </tr><br>
+               </tr><br>
                <tr id="tab">
                <input type="email" class="form-control" name="customeremail" placeholder="Enter a valid Email Adress" 
                [ngModel]="customeremail" formControlName="customeremail"/>
@@ -26,9 +25,7 @@
                 <span class="text-danger" *ngIf="faq88.get('customeremail')?.errors?.['required']">Email is required</span>
                 <span class="text-danger" *ngIf="faq88.get('customeremail')?.errors?.['pattern']">Please provide a valid email address</span>
                   </span>
-              </tr><br>
-
-
+               </tr><br>
                <tr><textarea name="querydes" id="Comments" rows="4" cols="40" class="form-control" placeholder="Enter a Question with description" 
                 [ngModel]="querydes" formControlName="querydes"></textarea>
                 <span class="help-block " *ngIf="faq88.get('querydes')?.errors && (faq88.get('querydes')?.touched ||faq88.get('querydes')?.dirty)">
@@ -36,11 +33,10 @@
                  <span class="text-danger" *ngIf="faq88.get('querydes')?.errors?.['minlength']">Minimum length not satisfied</span>
                    </span></tr>
                <br> <button type="submit" class="btn btn-primary" style="background-color: #6672b6;border: 0px;" [disabled]="!faq88.valid">Submit</button>
-          
-            </table></form>
-          </div></div></div>
-          <div class="col-sm-1"></div>
-      </div>
+               </table></form>
+              </div></div></div>
+            <div class="col-sm-1"></div>
+         </div>
   
       <div class="col-sm-6">
       <h2 class="head" style="text-align: center;margin-top: 10%;padding-bottom: 50px;">Questions</h2>
