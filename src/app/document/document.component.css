@@ -116,3 +116,6 @@ html,body{
     border-radius: 10px;
     border-style: dotted;
 }
+.box{
+  height: 30px;
+}
