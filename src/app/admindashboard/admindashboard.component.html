@@ -1,13 +1,14 @@
 <body > 
   <div class="row" style="margin-bottom: 15px;color: white;">
     <div class="col-sm-1" style="height: 100%;">
-        <button mat-icon-button [matMenuTriggerFor]="menu" class="btn" style="color: #6672b6;"><mat-icon>toc</mat-icon></button>
+        <button mat-icon-button [matMenuTriggerFor]="menu" class="btn" style="color: #6672b6;"><mat-icon>toc
+        </mat-icon></button>
         
         <mat-menu #menu="matMenu" style="background-color: #575b73;">
-        <button mat-menu-item routerLink="/admin">My Profile</button>
-        <button mat-menu-item routerLink="/admind">Setting</button>
+        <button mat-menu-item routerLink="/admindashboard">My Profile</button>
+        <button mat-menu-item routerLink="/admindashboard">Setting</button>
         <button mat-menu-item routerLink="/aboutus">AboutUs</button>
-        <button mat-menu-item routerLink="/frontpage">Logout</button>
+        <button mat-menu-item routerLink="/adminlogin">Logout</button>
       </mat-menu>
     
       
@@ -17,7 +18,6 @@
         <div class="container">
           <h4 style="font-weight: 500;font-size: 18px;">Total Number of Applications:</h4>
           <h5>{{allappcount}}</h5>
-          <p class="title"></p>
         </div>
       </div>
       </div>
@@ -45,7 +45,7 @@
         <div class="col-sm-1">
           <button mat-menu-item routerLink=""></button>
         </div>
-        <div class="col-sm-11">
+        <div class="col-sm-10">
         <div id="admin-div" [align]="'center'" > 
         <button mat-button [matMenuTriggerFor]="appre" class="card6"><h5>Applications</h5></button>
             <mat-menu #appre="matMenu" style="align-self: center;">
@@ -54,7 +54,7 @@
                  <button mat-menu-item (click)="displaypending()">Pending</button>
             </mat-menu>
             <div *ngIf="isapproved">
-              <h4 style="color: #575b73;">Approved Applications</h4>  
+              <h4 style="color: #575b73;" >Approved Applications</h4>  
               <div class="card5">
                  <Table class="table table-striped">
                   <tbody>
@@ -67,7 +67,6 @@
                    <th>Loan Amount</th>
                    <th>Tenure</th>
                    <th>Interest Rate</th>
-                   <th>Aadhar No</th>
                    <th>Pan No</th>
                    <th>Status</th>
                    </tr>
@@ -80,7 +79,6 @@
                    <td> {{a.loanAmount}} </td>
                    <td> {{a.tenure}} </td>
                    <td> {{a.interest}} </td>
-                   <td> {{a.user.aadharNo}} </td>
                    <td> {{a.user.panNo}} </td>
                    <td> {{a.status}} </td>
                    </tr>
@@ -102,7 +100,6 @@
                    <th>Loan Amount</th>
                    <th>Tenure</th>
                    <th>Interest Rate</th>
-                   <th>Aadhar No</th>
                    <th>Pan No</th>
                    <th>Status</th>
                    </tr>
@@ -115,7 +112,6 @@
                    <td> {{a.loanAmount}}</td>
                    <td> {{a.tenure}}</td>
                    <td> {{a.interest}}</td>
-                   <td> {{a.user.aadharNo}}</td>
                    <td> {{a.user.panNo}}</td>
                    <td> {{a.status}}</td>
                    </tr>
@@ -142,7 +138,6 @@
                    <th>Loan Amount</th>
                    <th>Tenure</th>
                    <th>Interest Rate</th>
-                   <th>Aadhar No</th>
                    <th>Pan No</th>
                    <th>Status</th>
                    <th>Approve/Reject</th>
@@ -156,7 +151,6 @@
                    <td> {{a.loanAmount}}</td>
                    <td> {{a.tenure}}</td>
                    <td> {{a.interest}}</td>
-                   <td> {{a.user.aadharNo}}</td>
                    <td> {{a.user.panNo}}</td>
                    <td> {{a.status}}</td>
                    <td>

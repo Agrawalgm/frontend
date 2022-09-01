@@ -12,7 +12,7 @@
                 <label for="firstName" style="text-align: center;">First Name</label>
                 <input type="text" style="max-width: 30rem;" formControlName="firstName" class="form-control" placeholder="Enter User FirstName">
                 <span class="help-block " *ngIf="regform.get('firstName')?.errors && (regform.get('firstName')?.touched || regform.get('firstName')?.dirty)">
-                    <span class="text-danger" *ngIf="regform.get('regform')?.errors?.['required']">
+                    <span class="text-danger" *ngIf="regform.get('firstName')?.errors?.['required']">
                       First Name is required
                       </span>
                       </span>
