@@ -31,7 +31,7 @@
         <div class="col-sm-4">
       <button type="checkbox" class="btn" (click)="toggleShow()">Check Eligibility</button>
       <button type="reset" class="btn" style="margin-left: 20px;">Reset</button>
-      <div *ngIf="isShown && partofsal>0" class="card">
+      <div *ngIf="isShown && partofsal>=0" class="card">
         <div class="card-body">
           <h3 class="card-title"> Maximum Loan Can be {{ partofsal | currency :'INR' }}<br></h3></div></div></div>
       <div class="col-sm-4">
