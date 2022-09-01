@@ -12,23 +12,15 @@
     font-family: 'Poppins',sans-serif;
     
   }
-  body{
-    height: 60vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-   
-  }
   .heading{
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-size: 45px;
-  font-weight: 500;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
+    font-size: 40px;
+    font-weight: 500;
+    text-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+    padding: 20px;
+    color: white;
+    border-radius: 50px;
+    border-style: dotted;
   }
   .row{
     max-width: 700px;
@@ -37,7 +29,7 @@
     padding: 35px 30px;
     border-radius: 5px;
     box-shadow: 0 5px 10px rgba(0,0,0,0.15);
-   
+    
   }
   .form-control{
     border-style: dotted;
@@ -51,3 +43,4 @@
     
     cursor: default;
   }
+  
