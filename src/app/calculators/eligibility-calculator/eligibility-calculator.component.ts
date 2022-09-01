@@ -34,16 +34,13 @@ export class EligibilityCalculatorComponent implements OnInit {
     var bottom = top - 1;
     var sp = top / bottom;
     this.emi = Number((100000 * roi) * sp).toFixed(0);
-    this.partofsal=Number((((((this.sal*0.5)-this.otheremi))/this.emi)*100000).toFixed(0));
+    this.partofsal=Number((((((this.sal-this.otheremi)*0.6))/this.emi)*100000).toFixed(0));
   }
   isShown: boolean = false ; // hidden by default
-
-
-toggleShow() {
-
-this.isShown = ! this.isShown;
-
-}
+  toggleShow()
+   {
+     this.isShown = ! this.isShown;
+   }
 }
 
 
