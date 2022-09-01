@@ -1,29 +1,35 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins',sans-serif;
-  }
-  body{
-    height: 100vh;
-    display: flex;
-    justify-content: center;
+    display:block;
     align-items: center;
-    padding: 10px;
-    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    justify-content: center;
+    font-family: 'Poppins',sans-serif;
+    
+  }
+  
+  .row{
+    width: 800px;
+    padding-bottom: 10px;
   }
   .container{
-    max-width: 700px;
+    
     width: 100%;
     background-color: #fff;
     padding: 25px 30px;
     border-radius: 5px;
     box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    
   }
   .heading{
-    font-size: 25px;
+    font-size: 40px;
     font-weight: 500;
-    position: relative;
+    text-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+    padding: 20px;
+    color: white;
+    border-radius: 50px;
+    border-style: dotted;
   }
    form input[type="radio"]{
      display: none;
@@ -34,7 +40,7 @@
    }
    form .button input{
      height: 100%;
-     width: 100%;
+     width: 100px;
      border-radius: 5px;
      border: none;
      color: #fff;
@@ -46,7 +52,7 @@
      background: linear-gradient(135deg, #71b7e6, #9b59b6);
    }
    form .button input:hover{
-    /* transform: scale(0.99); */
+
     background: linear-gradient(-135deg, #71b7e6, #9b59b6);
     }
    @media(max-width: 584px){
@@ -66,6 +72,7 @@
   .form-group{
     padding-left: 20px;
     height: 60px;
+  
   }
   .text-danger{
     padding-left: 10px;
@@ -78,8 +85,7 @@
     border-radius: 8px;
   }
   label {
-    height: 10px;
+    height: 20px;
     display: flex;
-    
     cursor: default;
   }
