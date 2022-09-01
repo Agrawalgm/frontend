@@ -27,49 +27,102 @@
                
                 <label for="lastName">Last Name</label>
                 <input type="text" style="max-width: 30rem; " formControlName="lastName" class="form-control" placeholder="Enter User LastName">
+                <span class="help-block " *ngIf="regform.get('lastName')?.errors && (regform.get('lastName')?.touched || regform.get('lastName')?.dirty)">
+                    <span class="text-danger" *ngIf="regform.get('lastName')?.errors?.['required']">
+                      Last Name is required
+                      </span>
+                      </span>
+                
             </div>
             <div class="form-outline mb-3">
                
                 <label for="email">Email</label>
                 <input type="email" style="max-width: 30rem; " formControlName="email" class="form-control" placeholder="Enter User Email">
+                <span class="help-block " *ngIf="regform.get('email')?.errors && (regform.get('email')?.touched ||
+                regform.get('email')?.dirty)">
+                 <span class="text-danger" *ngIf="regform.get('email')?.errors?.['required']">Email is required</span>
+                 <span class="text-danger" *ngIf="regform.get('email')?.errors?.['pattern']">Please provide a valid email address</span>
+                   </span>
             
             </div>
             <div class="form-outline mb-3">
              <label for="password">Password</label>
             <input type="password" style="max-width: 30rem;" formControlName="password" class="form-control" placeholder="Set Password">
+            <span class="help-block " *ngIf="regform.get('password')?.errors && (regform.get('password')?.touched || regform.get('password')?.dirty)">
+                <span class="text-danger" *ngIf="regform.get('password')?.errors?.['required']">
+                  Minimum 8 length is required
+                  </span>
+                  </span>
+            
             </div>
 
             <div class="form-outline mb-3">
                 <label for="number">Phone Number</label>
                <input type="number" style="max-width: 30rem;" formControlName="phone" class="form-control" placeholder="Enter Phone Number">
+               <span class="help-block " *ngIf="regform.get('number')?.errors && (regform.get('number')?.touched || regform.get('number')?.dirty)">
+                <span class="text-danger" *ngIf="regform.get('number')?.errors?.['required']">
+                  Maximum 10 length is required
+                  </span>
+                  </span>
+            
             </div>
 
             <div class="form-outline mb-3">
                 <label for="dob">Date Of Birth</label>
                <input type="date" style="max-width: 30rem;" formControlName="dob" class="form-control" placeholder="Enter DOB">
+               <span class="help-block " *ngIf="regform.get('date')?.errors && (regform.get('date')?.touched || regform.get('date')?.dirty)">
+                <span class="text-danger" *ngIf="regform.get('date')?.errors?.['required']">
+                  Date is required
+                  </span>
+                  </span>
+            
             </div>
 
             <div class="form-outline mb-3">
                 <label for="gender">Gender</label>
                <input type="text" style="max-width: 30rem;" formControlName="gender" class="form-control" placeholder="Enter Gender">
+               <span class="help-block " *ngIf="regform.get('gender')?.errors && (regform.get('gender')?.touched || regform.get('gender')?.dirty)">
+                <span class="text-danger" *ngIf="regform.get('gender')?.errors?.['required']">
+                  Gender is required
+                  </span>
+                  </span>
+            
             </div>
 
             <div class="form-outline mb-3">
                 <label for="nationality">Nationality</label>
                <input type="text" style="max-width: 30rem;" formControlName="nationality" class="form-control" placeholder="Enter Nationality">
+               <span class="help-block " *ngIf="regform.get('nationality')?.errors && (regform.get('nationality')?.touched || regform.get('nationality')?.dirty)">
+                <span class="text-danger" *ngIf="regform.get('nationality')?.errors?.['required']">
+                 Required field
+                  </span>
+                  </span>
+            
             </div>
 
             <div class="form-outline mb-3">
                 <label for="aadharnumber">AAdhar Number</label>
-               <input type="number" style="max-width: 30rem;" formControlName="aadharNo" class="form-control" placeholder="Enter Aadhar Number">
+               <input type="number" style="max-width: 30rem;" formControlName="aadharNo" class="form-control" placeholder="Enter 10-digit Aadhar Number">
+               <span class="help-block " *ngIf="regform.get('aadharnumber')?.errors && (regform.get('aadharnumber')?.touched || regform.get('aadharnumber')?.dirty)">
+                <span class="text-danger" *ngIf="regform.get('aadharnumber')?.errors?.['required']">
+                  Maximum 12 length is required
+                  </span>
+                  </span>
+            
             </div>
 
             <div class="form-outline mb-3">
                 <label for="pannumber">Pan Number</label>
                <input type="text" style="max-width: 30rem;" formControlName="panNo" class="form-control" placeholder="Enter Pan Number">
+               <span class="help-block " *ngIf="regform.get('pannumber')?.errors && (regform.get('pannumber')?.touched || regform.get('pannumber')?.dirty)">
+                <span class="text-danger" *ngIf="regform.get('pannumber')?.errors?.['required']">
+                  Maximum 10 length is required
+                  </span>
+                  </span>
+            
             </div>
 
-           <button type="submit" class="btn btn-success btn-m mb-1" style="font-size: 10px; padding: 10px;">NEXT</button>       
+           <button type="submit" class="btn btn-success btn-m mb-1" [disabled]="!regform.valid" style="font-size: 10px; padding: 10px;">NEXT</button>       
         </form> 
         </div>
     </div>
