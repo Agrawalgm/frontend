@@ -154,8 +154,8 @@
                    <td> {{a.user.panNo}}</td>
                    <td> {{a.status}}</td>
                    <td>
-                   <button class="btn5" style="margin-bottom:4px;margin-right:10px ;border-radius: 10px;" [type]="'submit'" (click)="updateStatus(a.applicationId);reloadCurrentPage()">Approve</button>
-                   <button class="btn5" [type]="'submit'" (click)="updateStatus1(a.applicationId);reloadCurrentPage()" style="border-radius:10px;">Reject</button>
+                   <button class="btn5" style="margin-right:10px ;border-radius: 5px;background-color: green;border: 0px;" [type]="'submit'" (click)="updateStatus(a.applicationId);reloadCurrentPage()">Approve</button>
+                   <button class="btn5" [type]="'submit'" (click)="updateStatus1(a.applicationId);reloadCurrentPage()" style="border-radius:5px;border:0px;background-color: rgb(243, 79, 79);">Reject</button>
                    </td>
                    </tr>
                    </tbody>
